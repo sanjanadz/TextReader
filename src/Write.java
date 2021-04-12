@@ -1,5 +1,6 @@
 
 import java.io.*;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class Write extends javax.swing.JFrame {
@@ -32,6 +33,7 @@ public class Write extends javax.swing.JFrame {
         TF_filename = new javax.swing.JTextField();
         B_submit = new javax.swing.JButton();
         B_exit = new javax.swing.JButton();
+        B_back = new javax.swing.JButton();
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/yy.png"))); // NOI18N
         jLabel3.setText("jLabel2");
@@ -111,6 +113,19 @@ public class Write extends javax.swing.JFrame {
 
         B_exit.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         B_exit.setText("EXIT");
+        B_exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_exitActionPerformed(evt);
+            }
+        });
+
+        B_back.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        B_back.setText("HOME");
+        B_back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_backActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -118,18 +133,19 @@ public class Write extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(B_back, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(B_exit, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(B_submit, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 569, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel5Layout.createSequentialGroup()
-                            .addComponent(jLabel4)
-                            .addGap(18, 18, 18)
-                            .addComponent(TF_filename))
-                        .addComponent(jLabel5)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 569, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(18, 18, 18)
+                        .addComponent(TF_filename))
+                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING))
                 .addContainerGap(32, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
@@ -145,8 +161,9 @@ public class Write extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(B_exit, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
-                    .addComponent(B_submit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(B_back, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(B_submit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(B_exit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -211,6 +228,20 @@ public class Write extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_B_submitActionPerformed
 
+    private void B_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_backActionPerformed
+        // Back 
+        Menu home = new Menu();
+         home.setVisible(true);
+        home.setLocationRelativeTo(null);
+        home.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.dispose();
+    }//GEN-LAST:event_B_backActionPerformed
+
+    private void B_exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_exitActionPerformed
+        // Exit Button
+        this.dispose();
+    }//GEN-LAST:event_B_exitActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -247,6 +278,7 @@ public class Write extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton B_back;
     private javax.swing.JButton B_exit;
     private javax.swing.JButton B_submit;
     private javax.swing.JTextArea TA_text;
