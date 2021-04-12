@@ -108,7 +108,7 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace pref="56" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="exit_button" min="-2" pref="73" max="-2" attributes="0"/>
+                          <Component id="B_exit" min="-2" pref="73" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
                               <Component id="read_button" max="32767" attributes="0"/>
                               <Component id="write_button" pref="305" max="32767" attributes="0"/>
@@ -129,7 +129,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="edit_button" min="-2" pref="63" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="exit_button" pref="25" max="32767" attributes="0"/>
+                      <Component id="B_exit" pref="25" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -169,10 +169,13 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="edit_buttonActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="exit_button">
+            <Component class="javax.swing.JButton" name="B_exit">
               <Properties>
                 <Property name="text" type="java.lang.String" value="EXIT"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="B_exitActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

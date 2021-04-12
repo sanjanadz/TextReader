@@ -93,6 +93,7 @@ public class Write extends javax.swing.JFrame {
         jLabel5.setText("Write yout text here ");
 
         TA_text.setColumns(20);
+        TA_text.setLineWrap(true);
         TA_text.setRows(5);
         jScrollPane1.setViewportView(TA_text);
 
@@ -212,8 +213,17 @@ public class Write extends javax.swing.JFrame {
         String filename = TF_filename.getText();
         String text_c = TA_text.getText();
         
-        try{
-            FileWriter file1 = new FileWriter("E:\\Mini Projects\\JAVA\\TextReader\\"+filename+".txt");
+        if (filename.equals("")){
+            JOptionPane.showMessageDialog(null, "Add a filename");
+        }
+        else if(text_c.equals("")){
+            JOptionPane.showMessageDialog(null, "Text field is empty.");
+        }
+        
+        
+        else{
+            try{
+            FileWriter file1 = new FileWriter("E:\\Mini Projects\\JAVA\\TextReader\\TextFiles\\"+filename+".txt");
             BufferedWriter tx = new BufferedWriter(file1);
            tx.write(text_c);
            tx.close();
@@ -226,6 +236,9 @@ public class Write extends javax.swing.JFrame {
       catch(Exception ex){
             JOptionPane.showMessageDialog(null, "Fail " + filename +"!");
         }
+        }
+        
+        
     }//GEN-LAST:event_B_submitActionPerformed
 
     private void B_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_backActionPerformed
